@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance SaaS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h2>Finance</h2>
+        <button onclick="showDashboard()">Dashboard</button>
+        <button onclick="showAdd()">Nova Transação</button>
+    </aside>
+
+    <main class="content">
+
+        <section id="dashboard">
+            <h1>Dashboard</h1>
+
+            <div class="cards">
+                <div class="card income">
+                    <h3>Receitas</h3>
+                    <p id="totalIncome">R$ 0</p>
+                </div>
+
+                <div class="card expense">
+                    <h3>Despesas</h3>
+                    <p id="totalExpense">R$ 0</p>
+                </div>
+
+                <div class="card balance">
+                    <h3>Saldo</h3>
+                    <p id="totalBalance">R$ 0</p>
+                </div>
+            </div>
+
+            <h2>Transações</h2>
+            <ul id="transactionList"></ul>
+        </section>
+
+        <section id="addTransaction" class="hidden">
+            <h1>Nova Transação</h1>
+
+            <form id="transactionForm">
+                <input type="text" id="description" placeholder="Descrição" required>
+                
+                <input type="number" id="amount" placeholder="Valor" required>
+
+                <select id="type">
+                    <option value="income">Receita</option>
+                    <option value="expense">Despesa</option>
+                </select>
+
+                <button type="submit">Salvar</button>
+            </form>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
